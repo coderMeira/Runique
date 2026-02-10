@@ -6,7 +6,8 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.gradle.api.Project
 
 internal fun Project.configureBuildTypes(
-    commonExtension: CommonExtension
+    commonExtension: CommonExtension,
+    extensionType: ExtensionType
 ) {
     commonExtension.apply {
         buildFeatures.buildConfig = true
@@ -15,12 +16,20 @@ internal fun Project.configureBuildTypes(
             providers = providers
         ).getProperty("API_KEY") ?: "default_api_key"
 
-        buildTypes.apply {
-            getByName("release") {
-                configureReleaseBuildType(commonExtension, apiKey)
+        when (extensionType) {
+            ExtensionType.APPLICATION -> {
+                buildTypes.apply {
+                    getByName("release") {
+                        configureReleaseBuildType(commonExtension, apiKey)
+                    }
+                    getByName("debug") {
+                        configureDebugBuildType(apiKey)
+                    }
+                }
             }
-            getByName("debug") {
-                configureDebugBuildType(apiKey)
+
+            ExtensionType.LIBRARY -> {
+                // Library-specific build type configurations can be added here if needed
             }
         }
     }

@@ -118,4 +118,5 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 runiqueAndroidApplication = { id = "runique.android.application" }
 runiqueAndroidApplicationCompose = { id = "runique.android.application.compose" }
 runiqueAndroidLibrary = { id = "runique.android.library" }
+runiqueAndroidLibraryCompose = { id = "runique.android.library.compose" }
 

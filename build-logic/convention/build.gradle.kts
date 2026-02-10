@@ -34,6 +34,10 @@ gradlePlugin {
             id = "runique.jvm.library"
             implementationClass = "com.example.convention.JvmLibraryConventionPlugin"
         }
+        register("jvmKtor") {
+            id = "runique.jvm.ktor"
+            implementationClass = "com.example.convention.JvmKtorConventionPlugin"
+        }
     }
 }
 

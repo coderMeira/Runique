@@ -26,6 +26,10 @@ gradlePlugin {
             id = "runique.android.feature.ui"
             implementationClass = "com.example.convention.AndroidFeatureUiConventionPlugin"
         }
+        register("androidRoom") {
+            id = "runique.android.room"
+            implementationClass = "com.example.convention.AndroidRoomConventionPlugin"
+        }
     }
 }
 
@@ -34,5 +38,5 @@ dependencies {
     compileOnly(libs.android.tools.common)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
-    compileOnly(libs.room.gradlePlugin)
+    implementation(libs.room.gradlePlugin)
 }

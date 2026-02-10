@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.mapsplatform.secrets.plugin)
-    alias(libs.plugins.runiqueAndroidApplicationCompose)
+    alias(libs.plugins.runique.android.application.compose)
 }
 
 android {

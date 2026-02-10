@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.run.location"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
@@ -30,7 +30,7 @@ dependencies {
     implementation(projects.run.domain)
 
     implementation(libs.androidx.core.ktx)
-
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.ui.graphics)

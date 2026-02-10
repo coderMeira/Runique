@@ -4,7 +4,6 @@ import com.android.build.api.dsl.BuildType
 import com.android.build.api.dsl.CommonExtension
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.getByName
 
 internal fun Project.configureBuildTypes(
     commonExtension: CommonExtension
@@ -14,7 +13,7 @@ internal fun Project.configureBuildTypes(
         val apiKey = gradleLocalProperties(
             rootDir,
             providers = providers
-        ).getProperty("API_KEY")
+        ).getProperty("API_KEY") ?: "default_api_key"
 
         buildTypes.apply {
             getByName("release") {

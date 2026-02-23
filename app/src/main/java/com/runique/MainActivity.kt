@@ -1,4 +1,4 @@
-package com.runique.runique
+package com.runique
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

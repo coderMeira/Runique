@@ -29,7 +29,14 @@ internal fun Project.configureBuildTypes(
             }
 
             ExtensionType.LIBRARY -> {
-                // Library-specific build type configurations can be added here if needed
+                buildTypes.apply {
+                    getByName("release") {
+                        configureReleaseBuildType(commonExtension, apiKey)
+                    }
+                    getByName("debug") {
+                        configureDebugBuildType(apiKey)
+                    }
+                }
             }
         }
     }

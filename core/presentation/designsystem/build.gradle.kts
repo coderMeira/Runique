@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.core.presentation.designsystem"
+    namespace = "com.runique.core.presentation.designsystem"
 }
 
 dependencies {

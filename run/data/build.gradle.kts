@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.run.data"
+    namespace = "com.runique.run.data"
     compileSdk = 36
 
     defaultConfig {

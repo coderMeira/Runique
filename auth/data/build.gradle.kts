@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.auth.data"
+    namespace = "com.runique.auth.data"
 }
 
 dependencies {

@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.auth.presentation"
+    namespace = "com.runique.auth.presentation"
 }
 
 dependencies {

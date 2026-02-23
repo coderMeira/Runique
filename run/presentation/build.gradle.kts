@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.run.presentation"
+    namespace = "com.runique.run.presentation"
 }
 
 dependencies {

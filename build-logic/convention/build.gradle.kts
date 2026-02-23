@@ -2,41 +2,41 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.example.buildlogic"
+group = "com.runique.buildlogic"
 
 gradlePlugin {
     plugins {
         register("androidApplication") {
             id = "runique.android.application"
-            implementationClass = "com.example.convention.AndroidApplicationConventionPlugin"
+            implementationClass = "com.runique.convention.AndroidApplicationConventionPlugin"
         }
         register("androidApplicationCompose") {
             id = "runique.android.application.compose"
-            implementationClass = "com.example.convention.AndroidApplicationComposeConventionPlugin"
+            implementationClass = "com.runique.convention.AndroidApplicationComposeConventionPlugin"
         }
         register("androidLibrary") {
             id = "runique.android.library"
-            implementationClass = "com.example.convention.AndroidLibraryConventionPlugin"
+            implementationClass = "com.runique.convention.AndroidLibraryConventionPlugin"
         }
         register("androidLibraryCompose") {
             id = "runique.android.library.compose"
-            implementationClass = "com.example.convention.AndroidLibraryComposeConventionPlugin"
+            implementationClass = "com.runique.convention.AndroidLibraryComposeConventionPlugin"
         }
         register("androidFeatureUi") {
             id = "runique.android.feature.ui"
-            implementationClass = "com.example.convention.AndroidFeatureUiConventionPlugin"
+            implementationClass = "com.runique.convention.AndroidFeatureUiConventionPlugin"
         }
         register("androidRoom") {
             id = "runique.android.room"
-            implementationClass = "com.example.convention.AndroidRoomConventionPlugin"
+            implementationClass = "com.runique.convention.AndroidRoomConventionPlugin"
         }
         register("jvmLibrary") {
             id = "runique.jvm.library"
-            implementationClass = "com.example.convention.JvmLibraryConventionPlugin"
+            implementationClass = "com.runique.convention.JvmLibraryConventionPlugin"
         }
         register("jvmKtor") {
             id = "runique.jvm.ktor"
-            implementationClass = "com.example.convention.JvmKtorConventionPlugin"
+            implementationClass = "com.runique.convention.JvmKtorConventionPlugin"
         }
     }
 }

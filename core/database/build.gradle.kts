@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.core.database"
+    namespace = "com.runique.core.database"
 }
 
 dependencies {

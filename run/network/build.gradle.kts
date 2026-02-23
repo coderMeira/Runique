@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.run.network"
+    namespace = "com.runique.run.network"
 }
 
 dependencies {

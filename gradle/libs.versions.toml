@@ -39,7 +39,7 @@ playServicesMaps = "20.0.0"
 annotation = "1.9.1"
 
 # Project versions
-projectApplicationId = "com.example.runique"
+projectApplicationId = "com.runique.runique"
 projectVersionName = "1.0"
 projectMinSdkVersion = "25"
 projectTargetSdkVersion = "34"

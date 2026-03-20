@@ -30,6 +30,9 @@ dependencies {
     implementation(projects.run.location)
     implementation(projects.run.network)
 
+    implementation(libs.bundles.koin)
+    implementation(libs.timber)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -21,13 +21,16 @@ class RegisterViewModel(
         viewModelScope.launch {
             combine(
                 snapshotFlow { state.email.text.toString() },
-                snapshotFlow { state.password.text.toString() }
-            ) { email, password ->
+                snapshotFlow { state.password.text.toString() }) { email, password ->
                 state.copy(
                     isEmailValid = userDataValidator.isValidEmail(email),
-                    passwordValidationState = userDataValidator.validatePassword(password)
+                    passwordValidationState = userDataValidator.validatePassword(password),
+                    canRegister = userDataValidator.isValidEmail(email) &&
+                            userDataValidator.validatePassword(password).isValidPassword
                 )
-            }.collect { state = it }
+            }.collect { newState ->
+                state = newState
+            }
         }
     }
 

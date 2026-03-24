@@ -3,6 +3,7 @@ package com.runique
 import android.app.Application
 import com.runique.auth.data.di.authDataModule
 import com.runique.auth.presentation.di.AuthViewModelModule
+import com.runique.core.data.di.coreDataModule
 import com.runique.di.appModule
 import com.runique.runique.BuildConfig
 import org.koin.android.ext.koin.androidContext
@@ -23,7 +24,8 @@ class RuniqueApp : Application() {
             modules(
                 appModule,
                 authDataModule,
-                AuthViewModelModule
+                AuthViewModelModule,
+                coreDataModule
             )
         }
     }

@@ -51,8 +51,10 @@ class RegisterViewModel(
             RegisterAction.OnTogglePasswordVisibilityClick -> {
                 state = state.copy(isPasswordVisible = !state.isPasswordVisible)
             }
-
             RegisterAction.OnRegisterClick -> register()
+            RegisterAction.OnLoginClick -> {
+                //TODO : navigate to login screen
+            }
             else -> Unit
         }
     }

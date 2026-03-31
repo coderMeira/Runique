@@ -17,8 +17,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.runique.auth.presentation.R
 import com.runique.core.presentation.designsystem.LogoIcon
-import com.runique.core.presentation.designsystem.R
 import com.runique.core.presentation.designsystem.RuniqueTheme
 import com.runique.core.presentation.designsystem.components.GradientBackground
 import com.runique.core.presentation.designsystem.components.RuniqueActionButton
@@ -56,13 +56,13 @@ fun IntroScreen(
                 .padding(bottom = 48.dp),
         ) {
             Text(
-                text = stringResource(id = R.string.intro_welcome),
+                text = stringResource(id = R.string.welcome_to_runique),
                 color = MaterialTheme.colorScheme.onBackground,
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = stringResource(id = R.string.intro_welcome_desc),
+                text = stringResource(id = R.string.welcome_to_runique),
                 style = MaterialTheme.typography.bodySmall
             )
             Spacer(modifier = Modifier.height(32.dp))

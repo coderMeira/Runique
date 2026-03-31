@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="runique">Runique</string>
-    <string name="intro_welcome">Welcome to Runique!</string>
-    <string name="intro_welcome_desc">Track your runs, set goals and achieve fitness milestones with our intuitive app.</string>
-    <string name="sign_up">Sign up</string>
-    <string name="sign_in">Sign in</string>
-    <string name="create_account">Create Account</string>
-    <string name="already_have_an_account">Already have an account?</string>
-    <string name="login">Login</string>
-    <string name="email_hint">example@test.com</string>
-    <string name="email">Email</string>
-    <string name="email_additional_info">We\'ll never share your email with anyone else.</string>
     <string name="show_password">Show password</string>
     <string name="hide_password">Hide password</string>
-    <string name="password">Password</string>
-    <string name="password_requirement_length">Contains at least %d characters</string>
-    <string name="password_number_required">Contains at least one number</string>
-    <string name="password_lowercase_required">Contains a lowercase character</string>
-    <string name="password_uppercase_required">Contains an uppercase character</string>
-    <string name="register">Register</string>
-    <string name="registration_successful">Registration Successful</string>
 </resources>

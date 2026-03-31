@@ -1,6 +1,5 @@
 package com.runique
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -8,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.runique.auth.presentation.intro.IntroScreenRoot
+import com.runique.auth.presentation.login.LoginScreenRoot
 import com.runique.auth.presentation.register.RegisterScreenRoot
 
 @Composable
@@ -48,7 +48,21 @@ private fun NavGraphBuilder.authGraph(
             })
         }
         composable(route = "login") {
-            Text("Login Screen")
+            LoginScreenRoot(onLoginSuccess = {
+                navController.navigate("run") {
+                    popUpTo("auth") {
+                        inclusive = true
+                    }
+                }
+            }, onSignUpClick = {
+                navController.navigate("register") {
+                    popUpTo("login") {
+                        inclusive = true
+                        saveState = true
+                    }
+                    restoreState = true
+                }
+            })
         }
     }
 }

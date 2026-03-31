@@ -31,11 +31,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.runique.auth.domain.PasswordValidationState
 import com.runique.auth.domain.UserDataValidator
+import com.runique.auth.presentation.R
 import com.runique.core.presentation.designsystem.CheckIcon
 import com.runique.core.presentation.designsystem.CrossIcon
 import com.runique.core.presentation.designsystem.EmailIcon
 import com.runique.core.presentation.designsystem.Poppins
-import com.runique.core.presentation.designsystem.R
 import com.runique.core.presentation.designsystem.RuniqueDarkRed
 import com.runique.core.presentation.designsystem.RuniqueGray
 import com.runique.core.presentation.designsystem.RuniqueGreen
@@ -79,7 +79,13 @@ fun RegisterScreenRoot(
     }
     RegisterScreen(
         state = viewModel.state,
-        onAction = viewModel::onAction,
+        onAction = { action ->
+            when (action) {
+                is RegisterAction.OnLoginClick -> onSignInClick()
+                else -> Unit
+            }
+            viewModel.onAction(action)
+        }
     )
 }
 
@@ -136,10 +142,10 @@ fun RegisterScreen(
                 state = state.email,
                 startIcon = EmailIcon,
                 endIcon = if (state.isEmailValid) CheckIcon else null,
-                hint = stringResource(id = R.string.email_hint),
+                hint = stringResource(id = R.string.example_email),
                 title = stringResource(id = R.string.email),
                 modifier = Modifier.fillMaxWidth(),
-                additionalInfo = stringResource(id = R.string.email_additional_info),
+                additionalInfo = stringResource(id = R.string.must_be_a_valid_email),
                 keyboardType = KeyboardType.Email
             )
             Spacer(modifier = Modifier.height(16.dp))
@@ -154,24 +160,24 @@ fun RegisterScreen(
             Spacer(modifier = Modifier.height(16.dp))
             PasswordRequirementItem(
                 text = stringResource(
-                    id = R.string.password_requirement_length,
+                    id = R.string.at_least_x_characters,
                     UserDataValidator.MIN_PASSWORD_LENGTH
                 ),
                 isMet = state.passwordValidationState.hasMinLength
             )
             Spacer(modifier = Modifier.height(4.dp))
             PasswordRequirementItem(
-                text = stringResource(id = R.string.password_number_required),
+                text = stringResource(id = R.string.at_least_one_number),
                 isMet = state.passwordValidationState.hasDigit
             )
             Spacer(modifier = Modifier.height(4.dp))
             PasswordRequirementItem(
-                text = stringResource(id = R.string.password_lowercase_required),
+                text = stringResource(id = R.string.contains_lowercase_char),
                 isMet = state.passwordValidationState.hasLowerCase
             )
             Spacer(modifier = Modifier.height(4.dp))
             PasswordRequirementItem(
-                text = stringResource(id = R.string.password_uppercase_required),
+                text = stringResource(id = R.string.contains_uppercase_char),
                 isMet = state.passwordValidationState.hasUpperCase
             )
             Spacer(modifier = Modifier.height(32.dp))

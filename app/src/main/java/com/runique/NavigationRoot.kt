@@ -14,10 +14,11 @@ import com.runique.auth.presentation.register.RegisterScreenRoot
 
 @Composable
 fun NavigationRoot(
-    navController: NavHostController
+    navController: NavHostController,
+    isLoggedIn: Boolean
 ) {
     NavHost(
-        navController = navController, startDestination = "auth"
+        navController = navController, startDestination = if (isLoggedIn) "run" else "auth"
     ) {
         authGraph(navController = navController)
         runGraph(navController)
@@ -31,41 +32,46 @@ private fun NavGraphBuilder.authGraph(
         startDestination = "intro", route = "auth"
     ) {
         composable(route = "intro") {
-            IntroScreenRoot(onSignInClick = {
-                navController.navigate("login")
-            }, onSignUpClick = {
-                navController.navigate("register")
-            })
+            IntroScreenRoot(
+                onSignInClick = {
+                    navController.navigate("login")
+                }, onSignUpClick = {
+                    navController.navigate("register")
+                })
         }
         composable(route = "register") {
-            RegisterScreenRoot(onSignInClick = {
-                navController.navigate("login") {
-                    popUpTo("register") {
-                        inclusive = true
-                        saveState = true
+            RegisterScreenRoot(
+                onSignInClick = {
+                    navController.navigate("login") {
+                        popUpTo("register") {
+                            inclusive = true
+                            saveState = true
+                        }
+                        restoreState = true
                     }
-                    restoreState = true
-                }
-            }, onSuccessfulRegistration = {
-                navController.navigate("login")
-            })
+                },
+                onSuccessfulRegistration = {
+                    navController.navigate("login")
+                })
         }
         composable(route = "login") {
-            LoginScreenRoot(onLoginSuccess = {
-                navController.navigate("run") {
-                    popUpTo("auth") {
-                        inclusive = true
+            LoginScreenRoot(
+                onLoginSuccess = {
+                    navController.navigate("run") {
+                        popUpTo("auth") {
+                            inclusive = true
+                        }
                     }
-                }
-            }, onSignUpClick = {
-                navController.navigate("register") {
-                    popUpTo("login") {
-                        inclusive = true
-                        saveState = true
+                },
+                onSignUpClick = {
+                    navController.navigate("register") {
+                        popUpTo("login") {
+                            inclusive = true
+                            saveState = true
+                        }
+                        restoreState = true
                     }
-                    restoreState = true
-                }
-            })
+                })
         }
     }
 }

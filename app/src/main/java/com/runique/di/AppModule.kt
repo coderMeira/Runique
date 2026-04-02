@@ -2,11 +2,15 @@ package com.runique.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.runique.MainViewModel
 import org.koin.android.ext.koin.androidApplication
+import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
 val appModule = module {
     single<SharedPreferences> {
         androidApplication().getSharedPreferences("session_prefs", Context.MODE_PRIVATE)
     }
+
+    viewModelOf(::MainViewModel)
 }

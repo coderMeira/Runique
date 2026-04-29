@@ -5,6 +5,7 @@ import com.runique.auth.data.di.authDataModule
 import com.runique.auth.presentation.di.AuthViewModelModule
 import com.runique.core.data.di.coreDataModule
 import com.runique.di.appModule
+import com.runique.run.presentation.di.runOverviewViewModelModule
 import com.runique.runique.BuildConfig
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -25,7 +26,8 @@ class RuniqueApp : Application() {
                 appModule,
                 authDataModule,
                 AuthViewModelModule,
-                coreDataModule
+                coreDataModule,
+                runOverviewViewModelModule
             )
         }
     }
